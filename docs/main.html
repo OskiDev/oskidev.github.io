@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oscar Barclay | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<video autoplay muted loop id="bg">
+    <source src="assets/background-1.mp4" type="video/mp4" />
+</video>
+
+<div class="wrap">
+    <header class="topbar">
+        <div style="display:flex; align-items:center; gap:16px;">
+            <img src="assets/pfp.png" style="width:90px; height:90px; border-radius:50%; object-fit:cover;"  alt=""/>
+            <div style="display:flex; flex-direction:column; gap:6px; align-items: stretch;">
+                <h1 class="name" style="text-align: center">Oscar <em>Barclay</em></h1>
+                <div style="border-top:0.5px solid #3a2558;"></div>
+                <span style="font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:#7a5fa0; text-align: center">Gameplay and AI Programmer</span>
+            </div>
+        </div>
+        <div class="social">
+            <a href="https://github.com/OskiDev" target="_blank">
+                <img src="assets/github.png" style="width:50px; height:50px; opacity:1; transition:opacity 0.15s;" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1"  alt=""/>
+            </a>
+            <a href="https://www.linkedin.com/in/oscar-barclay-257721404/" target="_blank">
+                <img src="assets/linkedin.png" style="width:50px; height:50px; opacity:1; transition:opacity 0.15s;" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1"  alt=""/>
+            </a>
+        </div>
+    </header>
+    
+    <div class="meta-row">
+        <div class="filters" style="margin-left: auto; margin-right: auto;">
+            <span class="filter active" data-filter="all">All</span>
+            <span class="filter" data-filter="ue5">Unreal Engine 5</span>
+            <span class="filter" data-filter="cpp">C++</span>
+            <span class="filter" data-filter="bps">Blueprints</span>
+            <span class="filter" data-filter="network">Networking</span>
+        </div>
+    </div>
+
+    <div class="grid" id="grid">
+
+        <div class="cell" data-tags="ue5, bps, network">
+            <div class="cell-thumb parallaxed">
+                <a href="https://store.steampowered.com/app/3492760/Engine_Eternal/" target="_blank">
+                <img src="assets/ee.jpg" alt=""/>
+                </a>
+                <div class="cell-thumb-overlay"></div>
+                <span class="cell-thumb-text" style="text-transform: none">
+                    An online co-op horror game for up to 4 players. I acted as the lead gameplay, AI, and network programmer for this project across a period of 10 months. 
+                    <br> <br> 
+                    There are 9 distinct enemies in EE, all with very different AIs that required different solutions. 
+                    <br> <br> 
+                    Other features include random dungeon generation, a variety of maps that leverage level instances, and proximity voice chat.
+                </span>
+            </div>
+            <div class="cell-foot">
+                <div class="cell-meta">
+                    <span class="cell-year">2025</span>
+                    <span class="tag">Unreal Engine 5</span>
+                    <span class="tag">Blueprints</span>
+                    <span class="tag">Networking</span>
+                </div>
+                <h3 class="cell-title">Engine Eternal</h3>
+            </div>
+        </div>
+
+        <div class="cell" data-tags="ue5, cpp, bps">
+            <div class="cell-thumb parallaxed">
+                <a href="https://github.com/OskiDev/ue5-systems-and-extensions" target="_blank">
+                    <img src="assets/codeshowcase.png" alt="" style=""/>
+                </a>
+                <div class="cell-thumb-overlay"></div>
+                <span class="cell-thumb-text" style="text-transform: none">
+                    A showcase of systems and UE5 engine extensions that I developed for a larger project. The repository is populated with the relevant code files, all clearly commented.
+                    <br> <br>
+                    The main system listed is an AI Manager component with an architecture based in data driven design.
+                    <br> <br>
+                    The engine extensions listed include a custom editor mode, as well as a complete retrofit of engine source code for the EQS Trace Test.
+                </span>
+            </div>
+            <div class="cell-foot">
+                <div class="cell-meta">
+                    <span class="cell-year">2026</span>
+                    <span class="tag">Unreal Engine 5</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Blueprints</span>
+                </div>
+                <h3 class="cell-title">UE5 Systems and Extensions Showcase</h3>
+            </div>
+        </div>
+
+        <div class="cell" data-tags="cpp">
+            <div class="cell-thumb parallaxed">
+                <a href="https://github.com/OskiDev/playbuffer-pacman" target="_blank">
+                    <img src="assets/pacman.jpg" alt="" style=""/>
+                </a>
+                <div class="cell-thumb-overlay"></div>
+                <span class="cell-thumb-text" style="text-transform: none" >
+                    An implementation of Pacman using raw C++ through the Playbuffer framework. Full development time was roughly 2 weeks.
+                    <br> <br>
+                    Implementations for 4 distinctly different AI behaviours for the 4 different ghosts, mirroring the mechanics of the original game.
+                    <br> <br>
+                    Features use of the Singleton, State, and Double Buffer patterns, as well as use of C++ techniques such as function pointers.
+                </span>
+            </div>
+            <div class="cell-foot">
+                <div class="cell-meta">
+                    <span class="cell-year">2025</span>
+                    <span class="tag">C++</span>
+                </div>
+                <h3 class="cell-title">Pacman</h3>
+            </div>
+        </div>
+
+        <div class="cell" data-tags="ue5, bps">
+            <div class="cell-thumb parallaxed">
+                <a href="https://store.steampowered.com/app/2999720/Bump_in_the_Night/" target="_blank">
+                    <img src="assets/bitn.jpg" alt="" style=""/>
+                </a>
+                <div class="cell-thumb-overlay"></div>
+                <span class="cell-thumb-text" style="text-transform: none">
+                    A simple single-player horror game built entirely using Blueprints. I acted as the lead programmer on this project for a period of about 2 months.
+                    <br> <br>
+                    Features a very simple and incremental gameplay loop, leveraging features such as the Level Sequencer and Unreal's Audio tools.
+                    <br> <br>
+                    This was the first project that I worked on, and it essentially taught me how to use Unreal Engine 5 and make games as a whole.
+                </span>
+            </div>
+            <div class="cell-foot">
+                <div class="cell-meta">
+                    <span class="cell-year">2024</span>
+                    <span class="tag">Unreal Engine 5</span>
+                    <span class="tag">Blueprints</span>
+                </div>
+                <h3 class="cell-title">Bump in the Night</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <span class="copy" style="text-align: end; margin-left: auto;">© 2026 Oscar Barclay</span>
+    </footer>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

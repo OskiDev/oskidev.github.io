@@ -40,7 +40,7 @@ const projects = [
 ]
 
 document.getElementById("grid").innerHTML = projects.map(project => `<div class="cell" data-tags="${project.tags}">
-            <div class="cell-thumb parallaxed">
+            <div class="cell-thumb">
                 <a href="${project.link}" target="_blank">
                 <img src="${project.image}" alt=""/>
                 </a>
@@ -76,25 +76,23 @@ filters.forEach(f => {
     });
 });
 
-const images = document.querySelectorAll('.cell-thumb')
+document.querySelectorAll('.cell').forEach(card => {
+    const MAX = 7.5;
 
-images.forEach(image => {
-    image.addEventListener("mousemove", function(event) {
-        ParallaxHover(event, image);
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width  - 0.5;
+        const y = (e.clientY - rect.top)  / rect.height - 0.5;
+
+        const rotX =  y * MAX;
+        const rotY = -x * MAX;
+
+        card.style.transform =
+            `perspective(600px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(1.0)`;
     });
-})
 
-images.forEach(image => {
-    image.addEventListener("mouseleave", () => {
-        image.style.transform = 'translate(0, 0)'
-    })
-})
-
-function ParallaxHover(e, image) {
-    const ImageRect = image.getBoundingClientRect();
-    const ImageCenterX = ImageRect.left + ImageRect.width / 2;
-    const ImageCenterY = ImageRect.top + ImageRect.height / 2;
-    const amountMovedX = (e.clientX - ImageCenterX) * -0.05
-    const amountMovedY = (e.clientY - ImageCenterY) * -0.05
-    image.style.transform='translate(' + amountMovedX + 'px,' + amountMovedY + 'px)'
-}
+    card.addEventListener('mouseleave', () => {
+        card.style.transform =
+            'perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+});

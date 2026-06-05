@@ -111,6 +111,11 @@ body {
     flex-direction: column;
     gap: 10px;
     position: relative;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-in, transform 0.35s ease-out, box-shadow 0.12s ease;
+    will-change: transform;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
 }
 
 .cell-thumb {
@@ -126,6 +131,7 @@ body {
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
+    pointer-events: all;
     position: relative;
     color: #5c4478;
     transition: border-color 0.15s, background 0.15s;
@@ -225,10 +231,6 @@ body {
     text-decoration: none;
     margin-right: 18px;
     transition: color 0.15s;
-}
-
-.parallaxed{
-    transition: transform 0.4s ease-out;
 }
 
 .social a:hover { color: #9d7ec9; }

@@ -30,6 +30,14 @@ const projects = [
         year: "2025"
     },
     {
+        title: "Parry-Based Combat System",
+        link: "https://github.com/OskiDev/parry-based-combat",
+        image: "assets/combat.png",
+        tags: ["ue5", "cpp", "bps"],
+        description: `A combat system built with UE5's GAS Framework that was roughly inspired by the combat of Sekiro. <br> <br> The implementation makes strong use of UE5's gameplay tags along to strictly control combat state. Combat frame data is saved within animations to promote clean encapsulation and ease of tweaking numbers. <br> <br> Includes a simple enemy AI that is built on a behaviour tree. The enemy is capable of fighting with the player and engaging with all aspects of the system.`,
+        year: "2026"
+    },
+    {
         title: "Bump in the Night",
         link: "https://store.steampowered.com/app/2999720/Bump_in_the_Night/",
         image: "assets/bitn.jpg",
